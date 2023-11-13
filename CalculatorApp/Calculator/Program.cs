@@ -1,5 +1,7 @@
 ﻿
 
+using System.Threading.Channels;
+
 int num1 = 0;
 int num2 = 0;
 
@@ -19,5 +21,19 @@ Console.WriteLine("\tm - Multiply");
 Console.WriteLine("\td - Divide");
 Console.Write("What operation would you like to perform?:  ");
 
-
+switch (Console.ReadLine())
+{
+    case "a":
+        Console.WriteLine($"Your result: {num1} + {num2} = " + (num1 + num2) );
+        break;
+    case "s":
+        Console.WriteLine($"Your result: {num1} - {num2} = " + (num1 - num2));
+        break;
+    case "m":
+        Console.WriteLine($"Your result: {num1} x {num2} = " + (num1 * num2));
+        break;
+    case "d":
+        Console.WriteLine($"Your result: {num1} / {num2} = " + (num1 / num2));
+        break;
+}
 
