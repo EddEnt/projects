@@ -12,3 +12,4 @@ C:\Users\Edward\Desktop\projects\CalculatorApp\Calculator\obj\Debug\net6.0\refin
 C:\Users\Edward\Desktop\projects\CalculatorApp\Calculator\obj\Debug\net6.0\Calculator.pdb
 C:\Users\Edward\Desktop\projects\CalculatorApp\Calculator\obj\Debug\net6.0\Calculator.genruntimeconfig.cache
 C:\Users\Edward\Desktop\projects\CalculatorApp\Calculator\obj\Debug\net6.0\ref\Calculator.dll
+C:\Users\Edward\Desktop\projects\CalculatorApp\Calculator\obj\Debug\net6.0\Calculator.sourcelink.json

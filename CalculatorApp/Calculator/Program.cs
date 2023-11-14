@@ -19,6 +19,7 @@ Console.WriteLine("\ta - Add");
 Console.WriteLine("\ts - Subtract");
 Console.WriteLine("\tm - Multiply");
 Console.WriteLine("\td - Divide");
+Console.WriteLine("\tq - Quit");
 Console.Write("What operation would you like to perform?:  ");
 
 switch (Console.ReadLine())
@@ -34,6 +35,9 @@ switch (Console.ReadLine())
         break;
     case "d":
         Console.WriteLine($"Your result: {num1} / {num2} = " + (num1 / num2));
+        break;
+    case "q":
+        Environment.ExitCode = 0;
         break;
 }
 
