@@ -69,6 +69,7 @@ while (!endApp)
     if (Console.ReadLine() == "n") 
     {
         Trace.WriteLine("User exited after operation was performed");
+        calculator.CloseLog();
         endApp = true; 
     }
 

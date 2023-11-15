@@ -5,10 +5,11 @@ namespace CalculatorLibrary
 {
     public class Calculator
     {
+        private StreamWriter logFile;
         JsonWriter writer;
         public Calculator()
         {
-            StreamWriter logFile = File.CreateText("calculator.log");
+            logFile = File.CreateText("calculator.log");
             Trace.Listeners.Add(new TextWriterTraceListener(logFile));
             Trace.AutoFlush = true;
             Trace.WriteLine("Starting Calculator Log");
@@ -21,6 +22,12 @@ namespace CalculatorLibrary
             writer.WriteStartObject();
             writer.WritePropertyName("Operations");
             writer.WriteStartArray();
+        }
+
+        public void CloseLog()
+        {
+            Trace.WriteLine("Closing log file...");
+            logFile.Close();
         }
 
         public double DoOperation(double num1, double num2, string op)
@@ -63,6 +70,7 @@ namespace CalculatorLibrary
                     break;
                 case "q":
                     Trace.WriteLine("User exited the application from Main Menu");
+                    CloseLog();
                     writer.WriteValue("Quit");
                     Environment.Exit(0);
                     break;
@@ -76,6 +84,7 @@ namespace CalculatorLibrary
 
             return result;
         }
+
         public void Finish()
         {
             writer.WriteEndArray();
