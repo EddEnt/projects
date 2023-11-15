@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "MAP5jLjdY0Km8lqpuXfOjbibq5w0skehFx1eKKPSPpDYAqUZt3nlqiZmzVkEFUUEhigiqCOc7y8UESK+jN5dlw==",
+  "dgSpecHash": "7KPGZkX2KeynkPMKLN+VgisvbS6P60vRZyd+zEdxwEJHgsrC4gEDT/eTK7xjIGEQlEKGWRy9CXBwvY1gEJkMcA==",
   "success": true,
   "projectFilePath": "C:\\Users\\Edward\\Desktop\\projects\\CalculatorApp\\Calculator\\Calculator.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\Edward\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512"
+  ],
   "logs": []
 }
