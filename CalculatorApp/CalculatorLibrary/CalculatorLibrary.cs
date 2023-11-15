@@ -41,6 +41,7 @@ namespace CalculatorLibrary
                     }
                     break;
                 case "q":
+                    Trace.WriteLine("User exited the application from Main Menu");
                     Environment.Exit(0);
                     break;
                 // Return text for an incorrect option entry.

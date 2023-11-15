@@ -1,4 +1,5 @@
 ﻿using CalculatorLibrary;
+using System.Diagnostics;
 
 bool endApp = false;
 // Display title as the C# console calculator app.
@@ -65,7 +66,11 @@ while (!endApp)
 
     // Wait for the user to respond before closing.
     Console.Write("Press 'n' and Enter to close the app, or press any other key and Enter to continue: ");
-    if (Console.ReadLine() == "n") endApp = true;
+    if (Console.ReadLine() == "n") 
+    {
+        //Trace.WriteLine("");
+        endApp = true; 
+    }
 
     Console.WriteLine("\n"); // Friendly linespacing.
 }
