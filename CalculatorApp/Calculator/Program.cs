@@ -68,7 +68,7 @@ while (!endApp)
     Console.Write("Press 'n' and Enter to close the app, or press any other key and Enter to continue: ");
     if (Console.ReadLine() == "n") 
     {
-        //Trace.WriteLine("");
+        Trace.WriteLine("User exited after operation was performed");
         endApp = true; 
     }
 
