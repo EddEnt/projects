@@ -1,18 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "N4XiX0SuvYsmVcn562LnULkbhOLSQixGvJqRKr6ik70WJUGXhkktrIDqQzRnqZwYba1W1ASJGviRYUZdj6mCaw==",
-  "success": false,
+  "dgSpecHash": "MAP5jLjdY0Km8lqpuXfOjbibq5w0skehFx1eKKPSPpDYAqUZt3nlqiZmzVkEFUUEhigiqCOc7y8UESK+jN5dlw==",
+  "success": true,
   "projectFilePath": "C:\\Users\\Edward\\Desktop\\projects\\CalculatorApp\\Calculator\\Calculator.csproj",
   "expectedPackageFiles": [],
-  "logs": [
-    {
-      "code": "NU1201",
-      "level": "Error",
-      "message": "Project CalculatorLibrary is not compatible with net6.0 (.NETCoreApp,Version=v6.0). Project CalculatorLibrary supports: net8.0 (.NETCoreApp,Version=v8.0)",
-      "libraryId": "CalculatorLibrary",
-      "targetGraphs": [
-        "net6.0"
-      ]
-    }
-  ]
+  "logs": []
 }

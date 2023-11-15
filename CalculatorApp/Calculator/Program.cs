@@ -1,4 +1,4 @@
-﻿
+﻿using CalculatorLibrary;
 
 bool endApp = false;
 // Display title as the C# console calculator app.
@@ -46,7 +46,7 @@ while (!endApp)
 
     try
     {
-        result = Calculator.Calculator.DoOperation(cleanNum1, cleanNum2, op);
+        result = Calculator.DoOperation(cleanNum1, cleanNum2, op);
         if (double.IsNaN(result))
         {
             Console.WriteLine("This operation will result in a mathematical error.\n");

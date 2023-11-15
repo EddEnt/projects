@@ -1,10 +1,10 @@
 {
   "version": 3,
   "targets": {
-    "net6.0": {
+    "net8.0": {
       "CalculatorLibrary/1.0.0": {
         "type": "project",
-        "framework": "Unsupported,Version=v0.0",
+        "framework": ".NETCoreApp,Version=v8.0",
         "compile": {
           "bin/placeholder/CalculatorLibrary.dll": {}
         },
@@ -22,7 +22,7 @@
     }
   },
   "projectFileDependencyGroups": {
-    "net6.0": [
+    "net8.0": [
       "CalculatorLibrary >= 1.0.0"
     ]
   },
@@ -50,7 +50,7 @@
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
-        "net6.0"
+        "net8.0"
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
@@ -58,8 +58,8 @@
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
-        "net6.0": {
-          "targetAlias": "net6.0",
+        "net8.0": {
+          "targetAlias": "net8.0",
           "projectReferences": {
             "C:\\Users\\Edward\\Desktop\\projects\\CalculatorApp\\CalculatorLibrary\\CalculatorLibrary.csproj": {
               "projectPath": "C:\\Users\\Edward\\Desktop\\projects\\CalculatorApp\\CalculatorLibrary\\CalculatorLibrary.csproj"
@@ -74,8 +74,8 @@
       }
     },
     "frameworks": {
-      "net6.0": {
-        "targetAlias": "net6.0",
+      "net8.0": {
+        "targetAlias": "net8.0",
         "imports": [
           "net461",
           "net462",
@@ -92,19 +92,8 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100/PortableRuntimeIdentifierGraph.json"
       }
     }
-  },
-  "logs": [
-    {
-      "code": "NU1201",
-      "level": "Error",
-      "message": "Project CalculatorLibrary is not compatible with net6.0 (.NETCoreApp,Version=v6.0). Project CalculatorLibrary supports: net8.0 (.NETCoreApp,Version=v8.0)",
-      "libraryId": "CalculatorLibrary",
-      "targetGraphs": [
-        "net6.0"
-      ]
-    }
-  ]
+  }
 }
