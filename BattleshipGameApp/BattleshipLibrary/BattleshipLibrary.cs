@@ -1,6 +1,6 @@
 ﻿namespace BattleshipLibrary
 {
-    public class Class1
+    public class BattleshipLibrary
     {
 
     }
