@@ -1,4 +1,6 @@
-﻿
-//Placed holder text
-Console.WriteLine("Hello World");
+﻿using BattleshipGame;
+
+Menu.MainMenu();
+
+
 
