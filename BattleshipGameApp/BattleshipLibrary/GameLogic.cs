@@ -57,5 +57,9 @@ namespace BattleshipLibrary
             throw new NotImplementedException();
         }
 
+        public static bool PlayerStillActive(PlayerInfoModel opponent)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
