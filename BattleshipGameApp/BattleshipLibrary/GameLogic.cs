@@ -52,6 +52,36 @@ namespace BattleshipLibrary
             model.ShotGrid.Add(spot);
 
         }
+
+        private static bool ValidateShipLocation(PlayerInfoModel playerModel, string row, int column)
+        {
+            bool isValidShipLocation = true;
+
+            foreach (var ship in playerModel.ShipLocations) 
+            {
+                if (ship.SpotLetter == row.ToUpper() && ship.SpotNumber == column)
+                {
+                    isValidShipLocation = false;
+                }
+            }
+
+            return isValidShipLocation;
+        }
+
+        private static bool ValidateGridLocation(PlayerInfoModel playerModel, string row, int column)
+        {
+            bool isValidGridLocation = false;
+
+            foreach (var ship in playerModel.ShotGrid)
+            {
+                if (ship.SpotLetter == row.ToUpper() && ship.SpotNumber == column)
+                {
+                    isValidGridLocation = true;
+                }
+            }
+
+            return isValidGridLocation;
+        }
         public static bool PlaceShip(PlayerInfoModel playerModel, string shipLocation)
         {
             bool placeShipOutput = false;
@@ -64,23 +94,13 @@ namespace BattleshipLibrary
             {
                 playerModel.ShipLocations.Add(new GridSpotModel
                 {
-                    SpotLetter = row,
+                    SpotLetter = row.ToUpper(),
                     SpotNumber = column,
                     Status = GridSpotStatus.Ship
                 });
             }
 
             return placeShipOutput;
-        }
-
-        private static bool ValidateShipLocation(PlayerInfoModel playerModel, string row, int column)
-        {
-            throw new NotImplementedException();
-        }
-
-        private static bool ValidateGridLocation(PlayerInfoModel playerModel, string row, int column)
-        {
-            throw new NotImplementedException();
         }
 
         public static bool PlayerStillActive(PlayerInfoModel player)
@@ -115,7 +135,20 @@ namespace BattleshipLibrary
 
         public static (string row, int column) SplitShotIntoRowAndColumn(string shot)
         {
-            throw new NotImplementedException();
+            string row = "";
+            int column = 0;
+
+            if (shot.Length != 2)
+            {
+                throw new ArgumentException("This was an invalid shot type. ", "shot");
+            }
+
+            char[] shotArray = shot.ToArray();
+
+            row = shotArray[0].ToString();
+            column = int.Parse(shotArray[1].ToString());
+
+            return (row, column);
         }
 
         public static bool ValidateShot(PlayerInfoModel activePlayer, string row, int column)
