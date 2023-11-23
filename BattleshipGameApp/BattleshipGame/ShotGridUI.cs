@@ -28,20 +28,22 @@ namespace BattleshipGame
                 }
                 else if (gridSpot.Status == GridSpotStatus.Hit)
                 {
-                    Console.Write(" X ");
+                    Console.Write(" X  ");
                 }
                 else if (gridSpot.Status == GridSpotStatus.Miss)
                 {
-                    Console.Write(" O ");
+                    Console.Write(" O  ");
                 }
                 else
                 {
                     //Failsafe measure. THIS SHOULD NEVER APPEAR!!!
-                    Console.Write(" ? ");
+                    Console.Write(" ?  ");
                 }
-
-
             }
+
+            Console.WriteLine();
+            Console.WriteLine();
+
         }
     }
 }

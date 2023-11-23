@@ -19,9 +19,16 @@ namespace BattleshipGame
 
             do
             {
-                string shot = AskForShot();
-                (row, column) = GameLogic.SplitShotIntoRowAndColumn(shot);
-                isValidShot = GameLogic.ValidateShot(activePlayer, row, column);
+                string shot = AskForShot(activePlayer);
+                try
+                {
+                    (row, column) = GameLogic.SplitShotIntoRowAndColumn(shot);
+                    isValidShot = GameLogic.ValidateShot(activePlayer, row, column);
+                }
+                catch (Exception ex)
+                {                    
+                    isValidShot = false;
+                }
 
                 if (isValidShot == false)
                 {
@@ -35,12 +42,26 @@ namespace BattleshipGame
 
             //Recording Results
             GameLogic.MarkShotResult(activePlayer, row, column, isAHit);
+            DisplayShotResults(row, column, isAHit);
 
         }
 
-        private static string AskForShot()
+        private static void DisplayShotResults(string row, int column, bool isAHit)
         {
-            Console.WriteLine("Please enter your shot selection: ");
+            if (isAHit)
+            {
+                Console.WriteLine($"{row}{column} is a hit!"); 
+            }
+            else
+            {
+                Console.WriteLine($"{row}{column} is a miss.");
+            }
+            Console.WriteLine();
+        }
+
+        private static string AskForShot(PlayerInfoModel player )
+        {
+            Console.WriteLine($"{ player.UserName }, please enter your shot selection: ");
             string userEnteredShotOutput = Console.ReadLine();
 
             return userEnteredShotOutput;

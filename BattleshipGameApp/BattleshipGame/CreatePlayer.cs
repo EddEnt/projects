@@ -30,7 +30,7 @@ namespace BattleshipGame
 
         public static string AskForUserName()
         {
-            Console.WriteLine("Enter your username: ");
+            Console.Write("Enter your username: ");
             string usernameOutput = Console.ReadLine();
 
             return usernameOutput;
@@ -40,10 +40,19 @@ namespace BattleshipGame
         {
             do
             {
-                Console.WriteLine($"Where do you want to place ship {playerModel.ShipLocations.Count + 1}: ");
+                Console.Write($"Where do you want to place ship {playerModel.ShipLocations.Count + 1}: ");
                 string shipLocation = Console.ReadLine();
 
-                bool isValidLocation = GameLogic.PlaceShip(playerModel, shipLocation);
+                bool isValidLocation = false;
+
+                try
+                {
+                    isValidLocation = GameLogic.PlaceShip(playerModel, shipLocation);
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Error " + ex.Message);
+                }
 
                 if (isValidLocation == false)
                 {

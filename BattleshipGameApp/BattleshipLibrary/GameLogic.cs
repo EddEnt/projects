@@ -52,7 +52,7 @@ namespace BattleshipLibrary
             playerModel.ShotGrid.Add(spot);
 
         }
-
+        //Ship location validation for PlaceShip method
         private static bool ValidateShipLocation(PlayerInfoModel playerModel, string row, int column)
         {
             bool isValidShipLocation = true;
@@ -68,6 +68,7 @@ namespace BattleshipLibrary
             return isValidShipLocation;
         }
 
+        //Grid location validation for PlaceShip method
         private static bool ValidateGridLocation(PlayerInfoModel playerModel, string row, int column)
         {
             bool isValidGridLocation = false;
@@ -98,6 +99,8 @@ namespace BattleshipLibrary
                     SpotNumber = column,
                     Status = GridSpotStatus.Ship
                 });
+
+                placeShipOutput = true;
             }
 
             return placeShipOutput;
@@ -180,6 +183,7 @@ namespace BattleshipLibrary
                 if (ship.SpotLetter == row.ToUpper() && ship.SpotNumber == column) 
                 {
                     isAHitOnShip = true;
+                    ship.Status = GridSpotStatus.Sunk;
                 }
             }
 
