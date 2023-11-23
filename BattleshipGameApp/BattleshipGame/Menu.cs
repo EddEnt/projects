@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using BattleshipLibrary.Models;
 using BattleshipGame;
+using BattleshipLibrary;
 
 namespace BattleshipGame
 {
@@ -24,11 +25,29 @@ namespace BattleshipGame
                 ShotGridUI.DisplayShotGrid(activePlayer);
                 PlayerShots.RecordPlayerShots(activePlayer, opponent);
 
-            } while (winner == null) 
-            {
+                bool doesGameContinue = GameLogic.PlayerStillActive(opponent);
 
-            }
+                if (doesGameContinue == true)
+                {
+                    //Tuple usage to swap player positions
+                    (activePlayer, opponent) = (opponent, activePlayer);
 
+                }
+                else
+                {
+                    winner = activePlayer;
+                }
+
+            } while (winner == null);
+
+            IdentifyWinner(winner);
+
+        }
+
+        private static void IdentifyWinner(PlayerInfoModel winner)
+        {
+            Console.WriteLine($"Congratulations to { winner.UserName}. You are the winner!");
+            Console.WriteLine($" { winner.UserName } took { GameLogic.GetShotCount(winner) } shots.");
         }
 
         public static void WelcomeMessage()
