@@ -57,9 +57,19 @@ namespace BattleshipLibrary
             throw new NotImplementedException();
         }
 
-        public static bool PlayerStillActive(PlayerInfoModel opponent)
+        public static bool PlayerStillActive(PlayerInfoModel player)
         {
-            throw new NotImplementedException();
+            bool playerIsStillActive = false;
+
+            foreach (var ship in player.ShipLocations)
+            {
+                if (ship.Status != GridSpotStatus.Sunk)
+                {
+                    playerIsStillActive = true;
+                }
+            }
+
+            return playerIsStillActive;
         }
 
         public static int GetShotCount(PlayerInfoModel winner)
