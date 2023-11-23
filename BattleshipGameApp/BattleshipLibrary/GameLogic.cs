@@ -52,7 +52,33 @@ namespace BattleshipLibrary
             model.ShotGrid.Add(spot);
 
         }
-        public static bool PlaceShip(PlayerInfoModel playerModel, string? shipLocation)
+        public static bool PlaceShip(PlayerInfoModel playerModel, string shipLocation)
+        {
+            bool placeShipOutput = false;
+            (string row, int column) = SplitShotIntoRowAndColumn(shipLocation);
+
+            bool isValidShipLocation = ValidateGridLocation(playerModel, row, column);
+            bool isGridSpotOpen = ValidateShipLocation(playerModel, row, column);
+
+            if (isValidShipLocation && isGridSpotOpen)
+            {
+                playerModel.ShipLocations.Add(new GridSpotModel
+                {
+                    SpotLetter = row,
+                    SpotNumber = column,
+                    Status = GridSpotStatus.Ship
+                });
+            }
+
+            return placeShipOutput;
+        }
+
+        private static bool ValidateShipLocation(PlayerInfoModel playerModel, string row, int column)
+        {
+            throw new NotImplementedException();
+        }
+
+        private static bool ValidateGridLocation(PlayerInfoModel playerModel, string row, int column)
         {
             throw new NotImplementedException();
         }
@@ -72,9 +98,19 @@ namespace BattleshipLibrary
             return playerIsStillActive;
         }
 
-        public static int GetShotCount(PlayerInfoModel winner)
+        public static int GetShotCount(PlayerInfoModel player)
         {
-            throw new NotImplementedException();
+            int playerShotCount = 0;
+
+            foreach (var shot in player.ShotGrid) 
+            {
+                if (shot.Status != GridSpotStatus.Empty)
+                {
+                    playerShotCount += 1;
+                }
+            }
+
+            return playerShotCount;
         }
 
         public static (string row, int column) SplitShotIntoRowAndColumn(string shot)
