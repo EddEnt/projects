@@ -9,7 +9,7 @@ namespace BattleshipLibrary
 {
     public class GameLogic
     {
-        public static void InitializeGrid(PlayerInfoModel model)
+        public static void InitializeGrid(PlayerInfoModel playerModel)
         {
             List<string> letters = new List<string>
             {
@@ -34,13 +34,13 @@ namespace BattleshipLibrary
             {
                 foreach (int number in numbers) 
                 {
-                    AddGridSpot(model, letter, number);
+                    AddGridSpot(playerModel, letter, number);
                 }
             }
         }
 
 
-        private static void AddGridSpot(PlayerInfoModel model, string letter, int number)
+        private static void AddGridSpot(PlayerInfoModel playerModel, string letter, int number)
         {
             GridSpotModel spot = new GridSpotModel
             {
@@ -49,7 +49,7 @@ namespace BattleshipLibrary
                 Status = GridSpotStatus.Empty
             };
 
-            model.ShotGrid.Add(spot);
+            playerModel.ShotGrid.Add(spot);
 
         }
 
@@ -103,11 +103,11 @@ namespace BattleshipLibrary
             return placeShipOutput;
         }
 
-        public static bool PlayerStillActive(PlayerInfoModel player)
+        public static bool PlayerStillActive(PlayerInfoModel activePlayer)
         {
             bool playerIsStillActive = false;
 
-            foreach (var ship in player.ShipLocations)
+            foreach (var ship in activePlayer.ShipLocations)
             {
                 if (ship.Status != GridSpotStatus.Sunk)
                 {
@@ -118,11 +118,11 @@ namespace BattleshipLibrary
             return playerIsStillActive;
         }
 
-        public static int GetShotCount(PlayerInfoModel player)
+        public static int GetShotCount(PlayerInfoModel playerModel)
         {
             int playerShotCount = 0;
 
-            foreach (var shot in player.ShotGrid) 
+            foreach (var shot in playerModel.ShotGrid) 
             {
                 if (shot.Status != GridSpotStatus.Empty)
                 {
@@ -133,6 +133,8 @@ namespace BattleshipLibrary
             return playerShotCount;
         }
 
+        //Places the shot into the correct row and column
+        //Splits the string(representing a shot) into its row and column components
         public static (string row, int column) SplitShotIntoRowAndColumn(string shot)
         {
             string row = "";
@@ -184,9 +186,24 @@ namespace BattleshipLibrary
             return isAHitOnShip;
         }
 
-        public static void MarkShotResult(PlayerInfoModel activePlayer, string row, int column, bool isAHit)
+        public static void MarkShotResult(PlayerInfoModel playerModel, string row, int column, bool isAHit)
         {
-            throw new NotImplementedException();
+            bool isValidGridLocation = true;
+
+            foreach (var gridSpot in playerModel.ShotGrid)
+            {
+                if (gridSpot.SpotLetter == row.ToUpper() && gridSpot.SpotNumber == column) 
+                {
+                    if(isAHit)
+                    {
+                        gridSpot.Status = GridSpotStatus.Hit;
+                    }
+                    else
+                    {
+                        gridSpot.Status = GridSpotStatus.Miss;
+                    }
+                }
+            }
         }
     }
 }
