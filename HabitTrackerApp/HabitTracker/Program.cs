@@ -37,16 +37,16 @@ static void GetUserInput()
         switch (userInput)
         {
             case "1":
-                ViewAllRecords();
+                //ViewAllRecords();
                 break;
             case "2":
-                InsertRecord();
+                //InsertRecord();
                 break;
             case "3":
-                DeleteRecord();
+                //DeleteRecord();
                 break;
             case "4":
-                UpdateRecord();
+               // UpdateRecord();
                 break;
             case "q":
                 Console.WriteLine("Exiting...");
