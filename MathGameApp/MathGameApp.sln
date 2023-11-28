@@ -5,7 +5,7 @@ VisualStudioVersion = 17.8.34309.116
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MathGame", "MathGame\MathGame.csproj", "{7DC9C186-BC12-4FBF-A8E8-1E58E399A63C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibraryMathGame", "LibraryMathGame\LibraryMathGame.csproj", "{D8678997-9C3A-4ABE-A312-227B87370B25}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MathGameLibrary", "LibraryMathGame\MathGameLibrary.csproj", "{D8678997-9C3A-4ABE-A312-227B87370B25}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
