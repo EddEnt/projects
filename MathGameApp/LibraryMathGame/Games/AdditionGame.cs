@@ -12,7 +12,7 @@ namespace LibraryMathGame.Games
         public static void StartAdditionGame()
         {
             Console.WriteLine("-------------------------------");
-            Console.WriteLine("\x1b[1Addition Game\x1b[0m - Enter 'q' at any time to exit.");
+            Console.WriteLine("\x1b[1AAddition Game\x1b[0m - Enter 'q' at any time to exit.");
 
             while (true)
             {
