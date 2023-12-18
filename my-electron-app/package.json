@@ -1,0 +1,22 @@
+{
+  "name": "my-electron-app",
+  "version": "1.0.0",
+  "description": "Electron tutorial",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "electron",
+    "tutorial",
+    "learning",
+    "testing"
+  ],
+  "author": "EddEnt",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^28.0.0",
+    "eslint": "^8.56.0"
+  }
+}
