@@ -1,13 +1,21 @@
 ﻿//Importing 2 Electron modules. Electron follows typical JavaScript conventions here
 //App - Controls application event lifecycle - camelCase style, modules that are not instandiable
 //BrowserWindow - Creates and manages app windows - PascalCase style, modules that are instaniable class constructors
-const { app, BrowserWindow } = require('electron/main')
+const { app, BrowserWindow, ipcMain } = require('electron/main')
+const path = require('node:path')
 
 //createWindow function loads the web page into a new BrowserWindow instance
 const createWindow = () => {
   const win = new BrowserWindow({
-    width: 800,
-    height: 600
+      width: 800,
+      height: 600,
+      //Attatching the script to the render process
+      // __dirname string points to the path of the currently executing script (Right now, it is the project root folder)
+      // path.join API joins multiple path segments together, creating a combined path string that works on all platforms
+      webPreferences: {
+          preload: path.join(__dirname, 'preload.js'),
+          contextIsolation: true
+      }
   })
 
   win.loadFile('index.html')
@@ -15,6 +23,8 @@ const createWindow = () => {
 
 //Calling the created function when the app is ready
 app.whenReady().then(() => {
+    ipcMain.handle('ping', () => 'pong')
+    //Can now send messages from the renderer to the main process through the 'ping' channel
   createWindow()
 
     //Many of Electron's core modules are Node.js event emitters that adhere to Node's asynchronous event-driven architecture.
