@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using HabitTrackerLibrary;
 
 namespace HabitTracker
 {
@@ -28,13 +29,14 @@ namespace HabitTracker
                 switch (userInput)
                 {
                     case "1":
-                        //ViewAllRecords();
+                        databaseMethods.DBViewAllRecords();
+
                         break;
                     case "2":
-                        //InsertRecord();
+                        databaseMethods.DBInsertRecord();
                         break;
                     case "3":
-                        //DeleteRecord();
+                        databaseMethods.DBDeleteRecord();
                         break;
                     case "4":
                         // UpdateRecord();
@@ -52,6 +54,7 @@ namespace HabitTracker
             }
         }
     }
+       
 }
 
 
