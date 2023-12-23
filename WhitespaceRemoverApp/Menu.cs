@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using LibraryWhitespaceRemoval;
 
 namespace WhitespaceRemoverApp
 {
@@ -23,8 +24,7 @@ namespace WhitespaceRemoverApp
                 switch (userInput)
                 {
                     case "1":
-                        //Remove Whitespace
-                        Console.WriteLine("Removing Whitespace");
+                        WhitespaceRemoval.RemoveWhitespaceFromString();                      
                         break;
                     case "2":
                         //View History

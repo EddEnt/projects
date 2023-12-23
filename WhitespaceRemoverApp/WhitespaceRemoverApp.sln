@@ -5,6 +5,8 @@ VisualStudioVersion = 17.8.34330.188
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WhitespaceRemoverApp", "WhitespaceRemoverApp.csproj", "{09C9912A-7761-495E-AADE-34A2899C6C4D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibraryWhitespaceRemoval", "..\LibraryWhitespaceRemoval\LibraryWhitespaceRemoval.csproj", "{7E6A78E8-4BAF-42B7-84FD-75E62AA9392F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{09C9912A-7761-495E-AADE-34A2899C6C4D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{09C9912A-7761-495E-AADE-34A2899C6C4D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{09C9912A-7761-495E-AADE-34A2899C6C4D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7E6A78E8-4BAF-42B7-84FD-75E62AA9392F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7E6A78E8-4BAF-42B7-84FD-75E62AA9392F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7E6A78E8-4BAF-42B7-84FD-75E62AA9392F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7E6A78E8-4BAF-42B7-84FD-75E62AA9392F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
