@@ -14,10 +14,9 @@ namespace LibraryWhitespaceRemoval
             Console.WriteLine("Please enter the text you would like to modify: ");
             userStringInput = Console.ReadLine();
 
-            userStringModified = String.Concat(userStringInput.Where(c => !Char.IsWhiteSpace(c)));
-            //userStringModified = String.Concat(userStringInput.Where(c => !Char.IsWhiteSpace(c)).ToArray());
+            userStringModified = String.Concat(userStringInput.Where(c => !Char.IsWhiteSpace(c)));            
 
-            Console.WriteLine($"Original: {userStringInput}");
+            Console.WriteLine($"Original: {userStringInput}\n\n");
             Console.WriteLine($"Modified: {userStringModified}");
         }
     }
