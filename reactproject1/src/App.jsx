@@ -1,7 +1,20 @@
+import Todo from "./components/Todo";
 function App(props) {
+
+    const taskList = props.tasks?.map((task) => (
+        <Todo
+            id={task.id}
+            name={task.name}
+            completed={task.completed}
+            key={task.id}
+        />
+        //Always pass a unique key to anything you render with iteration
+    ));
+
     return (
         <div className="todoapp stack-large">
             <h1>TodoMatic</h1>
+
             <form>
                 <h2 className="label-wrapper">
                     <label htmlFor="new-todo-input" className="label__lg">
@@ -19,6 +32,7 @@ function App(props) {
                     Add
                 </button>
             </form>
+
             <div className="filters btn-group stack-exception">
                 <button type="button" className="btn toggle-btn" aria-pressed="true">
                     <span className="visually-hidden">Show </span>
@@ -36,60 +50,20 @@ function App(props) {
                     <span className="visually-hidden"> tasks</span>
                 </button>
             </div>
+
             <h2 id="list-heading">3 tasks remaining</h2>
             <ul
                 role="list"
                 className="todo-list stack-large stack-exception"
                 aria-labelledby="list-heading">
-                <li className="todo stack-small">
-                    <div className="c-cb">
-                        <input id="todo-0" type="checkbox" defaultChecked />
-                        <label className="todo-label" htmlFor="todo-0">
-                            Eat
-                        </label>
-                    </div>
-                    <div className="btn-group">
-                        <button type="button" className="btn">
-                            Edit <span className="visually-hidden">Eat</span>
-                        </button>
-                        <button type="button" className="btn btn__danger">
-                            Delete <span className="visually-hidden">Eat</span>
-                        </button>
-                    </div>
-                </li>
-                <li className="todo stack-small">
-                    <div className="c-cb">
-                        <input id="todo-1" type="checkbox" />
-                        <label className="todo-label" htmlFor="todo-1">
-                            Sleep
-                        </label>
-                    </div>
-                    <div className="btn-group">
-                        <button type="button" className="btn">
-                            Edit <span className="visually-hidden">Sleep</span>
-                        </button>
-                        <button type="button" className="btn btn__danger">
-                            Delete <span className="visually-hidden">Sleep</span>
-                        </button>
-                    </div>
-                </li>
-                <li className="todo stack-small">
-                    <div className="c-cb">
-                        <input id="todo-2" type="checkbox" />
-                        <label className="todo-label" htmlFor="todo-2">
-                            Repeat
-                        </label>
-                    </div>
-                    <div className="btn-group">
-                        <button type="button" className="btn">
-                            Edit <span className="visually-hidden">Repeat</span>
-                        </button>
-                        <button type="button" className="btn btn__danger">
-                            Delete <span className="visually-hidden">Repeat</span>
-                        </button>
-                    </div>
-                </li>
+
+                {taskList}
+                
+                {/*<Todo name="Eat" id="todo-0" completed />*/}
+                {/*<Todo name="Sleep" id="todo-1" />*/}
+                {/*<Todo name="Repeat" id="todo-2" />*/}
             </ul>
+
         </div>
     );
 }
