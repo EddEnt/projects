@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AirplaneManagement.Menus
 {
-    internal class Customers
+    internal class MenuCustomers
     {
         public static void CustomersMenu()
         {
@@ -40,7 +40,7 @@ namespace AirplaneManagement.Menus
                         //Delete Customer
                         break;
                     case "4":
-                        Menu.MainMenu();                        
+                        MenuMain.MainMenu();                        
                         break;
                     default:
                         Console.WriteLine("Unknown input. Please try again...");

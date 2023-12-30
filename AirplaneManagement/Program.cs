@@ -1,6 +1,6 @@
 ﻿using AirplaneManagement.Menus;
 
-Menu.MainMenu();
+MenuMain.MainMenu();
 
 
 

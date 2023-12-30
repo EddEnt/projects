@@ -3,27 +3,28 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using AirplaneManagement;
 
 namespace AirplaneManagement.Menus
 {
-    internal class Menu
+    internal class MenuFlights
     {
-        public static void MainMenu()
+        public static void FlightsMenu()
         {
             string userInput = string.Empty;
 
-            while (true) {
-
+            Console.WriteLine();
+            while (true)
+            {
                 Console.Clear();
                 HeaderBanner.SystemHeaderBanner();
 
-                Console.WriteLine("--- Welcome to the Airplane Management System ---\n");
+                Console.WriteLine("--- Flights Menu ---\n");
 
-                Console.WriteLine("1. Customers");
-                Console.WriteLine("2. Flights");
-                Console.WriteLine("3. Bookings");
-                Console.WriteLine("4. Exit");
+                Console.WriteLine("1. Add Flight");
+                Console.WriteLine("2. View Flights");
+                Console.WriteLine("3. View Individual Flight");
+                Console.WriteLine("4. Delete Flight");
+                Console.WriteLine("5. Back to Main Menu");
 
                 Console.Write("Please select an option: ");
 
@@ -31,20 +32,23 @@ namespace AirplaneManagement.Menus
                 switch (userInput.Trim())
                 {
                     case "1":
-                        Customers.CustomersMenu();
+                        //Add Flight
                         break;
                     case "2":
-                        //Flight Selection
+                        //View Flights
                         break;
                     case "3":
-                        //Bookings Selection
+                        //View Individual Flight
                         break;
                     case "4":
-                        Console.WriteLine("Now exiting. Goodbye...");
-                        Environment.Exit(1);
+                        //Delete Flight
+                        break;
+                    case "5":
+                        MenuMain.MainMenu();
                         break;
                     default:
                         Console.WriteLine("Unknown input. Please try again...");
+                        Console.ReadKey();
                         break;
                 }
             }
