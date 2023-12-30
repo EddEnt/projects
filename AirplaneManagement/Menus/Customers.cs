@@ -40,7 +40,7 @@ namespace AirplaneManagement.Menus
                         //Delete Customer
                         break;
                     case "4":
-                        Menu.MainMenu();
+                        Menu.MainMenu();                        
                         break;
                     default:
                         Console.WriteLine("Unknown input. Please try again...");

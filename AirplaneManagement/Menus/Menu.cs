@@ -15,6 +15,7 @@ namespace AirplaneManagement.Menus
 
             while (true) {
 
+                Console.Clear();
                 HeaderBanner.SystemHeaderBanner();
 
                 Console.WriteLine("--- Welcome to the Airplane Management System ---\n");
