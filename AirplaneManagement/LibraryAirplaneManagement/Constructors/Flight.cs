@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace LibraryAirplaneManagement.Constructors
 {
-    internal class FLight
+    internal class Flight
     {
     }
 }
