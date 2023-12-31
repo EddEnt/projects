@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LibraryAirplaneManagement.Constructors
+namespace LibraryAirplaneManagement.Models
 {
     public class Booking
     {
