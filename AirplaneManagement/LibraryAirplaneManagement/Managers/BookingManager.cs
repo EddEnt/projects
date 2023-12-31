@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace LibraryAirplaneManagement.Managers
 {
-    public class BookingManager
+    internal class BookingManager
     {
     }
 }

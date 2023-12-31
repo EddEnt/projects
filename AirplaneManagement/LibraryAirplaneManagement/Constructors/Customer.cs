@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LibraryAirplaneManagement.Models
+namespace LibraryAirplaneManagement.Constructors
 {
     public class Customer
     {
