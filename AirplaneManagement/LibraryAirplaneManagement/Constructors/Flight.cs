@@ -15,7 +15,7 @@ namespace LibraryAirplaneManagement.Constructors
         public int NumberOfPassengers {  get; private set; }
         public Customer[] Passengers { get; private set; }
 
-        public Flight(int flightNumber, string flightOrigin, string flightDestination, int maxNumberOfSeats, int numberOfPassengers, Customer[] passengers)
+        public Flight(int flightNumber, string flightOrigin, string flightDestination, int maxNumberOfSeats)
         {
             FlightNumber = flightNumber;
             FlightOrigin = flightOrigin;
@@ -74,7 +74,8 @@ namespace LibraryAirplaneManagement.Constructors
 
         public string toString()
         {
-            string flightString = $"Flight Number: {FlightNumber}\nOrigin: {FlightOrigin}\nDestination: {FlightDestination}\nNumber of Passengers: {NumberOfPassengers}\nAvailable Seats: {MaxNumberOfSeats - NumberOfPassengers}";
+            string flightString = $"Flight Number: {FlightNumber}\nOrigin: {FlightOrigin}\nDestination: {FlightDestination}\nNumber of Passengers: {NumberOfPassengers}" +
+                $"\nAvailable Seats: {MaxNumberOfSeats - NumberOfPassengers}";
             flightString = flightString + GetPassengerList();
             return flightString;
         }
