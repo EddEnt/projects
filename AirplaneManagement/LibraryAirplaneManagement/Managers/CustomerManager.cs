@@ -58,7 +58,7 @@ namespace LibraryAirplaneManagement.Managers
             return customerList[location];
         }
 
-        public bool DeleteCustomer(int customerId)
+        public bool deleteCustomer(int customerId)
         {
             int location = FindCustomer(customerId);
             if (location == -1) { return false; }
