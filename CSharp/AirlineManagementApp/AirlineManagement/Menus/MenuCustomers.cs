@@ -3,11 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using LibraryAirlineManagement;
+using LibraryAirlineManagement.Managers;
 
 namespace AirlineManagement.Menus
 {
+
     internal class MenuCustomers
     {
+
         public static void CustomersMenu()
         {
             string userInput;
@@ -31,13 +35,13 @@ namespace AirlineManagement.Menus
                 switch (userInput.Trim())
                 {
                     case "1":
-                        //Add Customer
+                        AddCustomer();
                         break;
                     case "2":
-                        //View Customer
+                        ViewCustomer();
                         break;
                     case "3":
-                        //Delete Customer
+                        DeleteCustomer();
                         break;
                     case "4":
                         MenuMain.MainMenu();
@@ -49,5 +53,66 @@ namespace AirlineManagement.Menus
                 }
             }
         }
+
+        public static void AddCustomer()
+        {
+
+            string firstName, lastName, phoneNumber;
+
+            Console.Clear();
+            Console.WriteLine("--- Add Customer ---\n");
+
+            Console.Write("Customer First Name: ");
+            firstName = Console.ReadLine();
+            Console.Write("Customer Last Name: ");
+            lastName = Console.ReadLine();
+            Console.Write("Customer Phone Number: ");
+            phoneNumber = Console.ReadLine();
+            if (Program.aCoord.AddCustomer(firstName, lastName, phoneNumber))
+            {
+                Console.WriteLine("Customer added successfully.");
+            }
+            else
+            {
+                Console.WriteLine("Customer not added.");
+            }
+            Console.WriteLine("Press any key to continue...");
+            Console.ReadKey();
+
+        }
+
+        public static void ViewCustomer()
+        {
+            Console.Clear();
+            Console.WriteLine(Program.aCoord.CustomerList());
+
+            Console.WriteLine("Press any key to continue...");
+            Console.ReadKey();
+        }
+
+        public static void DeleteCustomer()
+        {
+            int customerId;
+
+            Console.Clear();
+            Console.WriteLine(Program.aCoord.CustomerList());
+
+            Console.Write("Please enter the Customer ID number to delete: ");
+            customerId = Convert.ToInt32(Console.ReadLine());
+
+            if(Program.aCoord.DeleteCustomer(customerId))
+            {
+                Console.WriteLine($"Customer {customerId} deleted successfully.");
+            }
+            else
+            {
+                Console.WriteLine($"Customer {customerId} was not found...");
+            }
+            Console.WriteLine("Press any key to continue...");
+            Console.ReadKey();
+
+        }
+
+
     }
 }

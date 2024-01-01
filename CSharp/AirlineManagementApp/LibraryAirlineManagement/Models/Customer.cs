@@ -8,11 +8,11 @@ namespace LibraryAirlineManagement.Models
 {
     public class Customer
     {
-        public int CustomerId { get; private set; }
-        public string FirstName { get; private set; }
-        public string LastName { get; private set; }
-        public string PhoneNumber { get; private set; }
-        public int Bookings { get; private set; }
+        public int CustomerId { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public string PhoneNumber { get; set; }
+        public int Bookings { get; set; }
 
         public Customer(int customerId, string firstName, string lastName, string phoneNumber)
         {

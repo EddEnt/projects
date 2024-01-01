@@ -1,8 +1,19 @@
-﻿using AirlineManagement.Menus;
+﻿using LibraryAirlineManagement;
+using AirlineManagement.Menus;
 
-MenuMain.MainMenu();
+namespace AirlineManagement
+{
+    class Program
+    {
+        public static AirlineCoordinator aCoord;
 
-
+        static void Main(string[] args)
+        {
+            aCoord = new AirlineCoordinator(100, 20, 30);
+            MenuMain.MainMenu();
+        }
+    }
+}
 
 
 

@@ -4,14 +4,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using AirlineManagement;
+using LibraryAirlineManagement;
 
 namespace AirlineManagement.Menus
 {
     internal class MenuMain
     {
+
         public static void MainMenu()
         {
             string userInput;
+            int customerSeed = 100;
+            int maxCustomers = 20;
+            int maxFlights = 100;
+            
+
 
             Console.WriteLine();
             while (true)

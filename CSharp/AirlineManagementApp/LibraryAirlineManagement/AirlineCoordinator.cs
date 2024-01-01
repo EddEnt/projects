@@ -13,7 +13,7 @@ namespace LibraryAirlineManagement
                 customerManager = new CustomerManager(customerIdSeed, maximumCustomers);
             }
 
-            public bool AddFLight(int flightNumber, string flightOrigin, string flightDestination, int maximumSeats)
+            public bool AddFlight(int flightNumber, string flightOrigin, string flightDestination, int maximumSeats)
             {
                 return flightManager.AddFlight(flightNumber, flightOrigin, flightDestination, maximumSeats);
             }
