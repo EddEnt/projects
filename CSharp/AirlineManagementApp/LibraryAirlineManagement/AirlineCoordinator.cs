@@ -28,6 +28,11 @@ namespace LibraryAirlineManagement
                 return flightManager.GetFlightList();
             }
 
+            public int GetFlight(int flightId)
+        {
+                return flightManager.FindFlight(flightId);
+            }
+
             public string CustomerList()
             {
                 return customerManager.GetCustomerList();
