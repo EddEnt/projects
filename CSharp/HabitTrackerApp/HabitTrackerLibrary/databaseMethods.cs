@@ -90,7 +90,7 @@ namespace HabitTrackerLibrary
         {
             Console.Clear();
             //To see a record they want to delete
-            //This is not practical for larger datasets
+            //This will not be practical for larger datasets
             //DBViewAllRecords();
 
             var recordId = API.Create.GetNumberInput("\nPlease type the ID of the record you would like to delete.");
@@ -99,6 +99,7 @@ namespace HabitTrackerLibrary
             {
                 connection.Open();
                 var tableCommand = connection.CreateCommand();
+
                 tableCommand.CommandText = $"DELETE from daily_water WHERE Id = '{recordId}'";
                 int rowCount = tableCommand.ExecuteNonQuery();
 
