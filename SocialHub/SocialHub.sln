@@ -7,11 +7,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SocialHub.Server", "SocialH
 EndProject
 Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "socialhub.client", "socialhub.client\socialhub.client.esproj", "{B95FDA26-B9C4-4D16-899A-19E86485A463}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain", "Domain\Domain.csproj", "{352D070E-97C3-473B-8449-22814C3A61AE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SocialHub.Domain", "Domain\SocialHub.Domain.csproj", "{352D070E-97C3-473B-8449-22814C3A61AE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Application", "Application\Application.csproj", "{06BD12DD-9AB1-49EB-8B08-EE58B8F6503F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SocialHub.Application", "Application\SocialHub.Application.csproj", "{06BD12DD-9AB1-49EB-8B08-EE58B8F6503F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Persistence", "Persistence\Persistence.csproj", "{3576EB59-75F7-434D-A868-4C6EF9184693}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SocialHub.Persistence", "Persistence\SocialHub.Persistence.csproj", "{3576EB59-75F7-434D-A868-4C6EF9184693}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
