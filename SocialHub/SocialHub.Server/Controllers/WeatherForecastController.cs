@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 
-namespace SocialHub.Server.SocialHub.API.Controllers
+namespace SocialHub.Server.Controllers
 {
     [ApiController]
     [Route("[controller]")]

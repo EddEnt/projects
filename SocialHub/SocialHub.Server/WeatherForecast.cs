@@ -1,4 +1,4 @@
-namespace SocialHub.Server.SocialHub.API
+namespace SocialHub.Server
 {
     public class WeatherForecast
     {
